@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <h2>Cadastro</h2>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div> 
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <p>
+        Preencha os campos abaixo para se cadastrar:
+    </p>
+
+    <form action="" method="post">
+        {{cadastro.csrf_token}}
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            {{cadastro.nome(class ="form-control", placeholder="Digite seu nome")}} 
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            {{cadastro.email(class ="form-control", placeholder="Digite seu email")}}
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            {{cadastro.telefone(class ="form-control", placeholder="Digite o número do seu telefone")}}
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            {{cadastro.senha(class ="form-control", placeholder="Digite uma senha")}}
+        </div>
+
+        {{cadastro.enviar(type="submit", class="btn btn-primary")}}
+        
+    </form>
+</div>
+{% endblock %}

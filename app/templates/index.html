@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% set titulo = "Página Inicial - Blog Python" %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    <h1>Bem-vindo ao Blog Python</h1>
+    <p>
+        Bem-vindo à página inicial do nosso blog sobre Python. Aqui você encontrará diversos artigos, tutoriais e projetos relacionados à linguagem de programação Python.
+    </p>
+    <p>
+        Navegue pelo menu acima para explorar os tópicos disponíveis. Se você é novo por aqui, não deixe de se cadastrar e fazer login para aproveitar todas as funcionalidades do site.
+    </p>
+    <hr>
+    <h2>Posts Recentes</h2>
+    <!-- Aqui você pode listar alguns dos posts mais recentes do blog. -->
+    <ul>
+        <li><a href="/blog/post1">Introdução ao Python para Iniciantes</a></li>
+        <li><a href="/blog/post2">Como construir uma API RESTful com Flask</a></li>
+        <li><a href="/blog/post3">Análise de Dados com Pandas: um guia básico</a></li>
+    </ul>
+</div>
+{% endblock %}
